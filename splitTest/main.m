@@ -13,8 +13,9 @@ int main(int argc, const char * argv[]) {
         // insert code here...
         Person *talkingiPhone = [[Person alloc] init];
         talkingiPhone.phoneName = @"WOOO";
-        NSLog(@"%@", talkingiPhone.phoneName);
-        talkingiPhone.speak;
+        [talkingiPhone decreaseBatteryLife:@5];
+        [talkingiPhone reportBatteryLife];
+        NSLog([talkingiPhone speak:@"WOO WOO"]);
     }
         return 0;
 }

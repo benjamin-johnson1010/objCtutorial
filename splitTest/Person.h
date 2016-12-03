@@ -8,8 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Person : NSObject
+@interface Person : NSObject{
+    NSNumber *_batteryLife;
+}
 @property NSString *phoneName;
 @property NSString *modelNumber;
-- (void) speak;
+
+- (void) reportBatteryLife;
+- (void) decreaseBatteryLife:(NSNumber *)num;
+
+- (NSString *) speak:(NSString *)greeting;
+
 @end

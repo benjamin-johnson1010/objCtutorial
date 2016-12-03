@@ -9,8 +9,24 @@
 #import "Person.h"
 
 @implementation Person
--(void)speak;
+
+- (Person *)init;
 {
-    NSLog(@"%@ says Hello There!", self);
+    _batteryLife = @100;
+    return [super init];
+}
+- (void)decreaseBatteryLife:(NSNumber *)num;
+{
+    _batteryLife = @([_batteryLife intValue] - [num intValue]);
+}
+- (void) reportBatteryLife;
+{
+    NSLog(@"Battery life is %@",_batteryLife);
+}
+
+- (NSString *)speak:(NSString *)greeting;
+{
+    NSString *message = [NSString stringWithFormat:@"%@ says %@", self.phoneName, greeting];
+    return message;
 }
 @end
